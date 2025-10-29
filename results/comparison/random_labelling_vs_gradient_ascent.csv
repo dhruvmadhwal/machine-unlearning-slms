@@ -1,0 +1,12 @@
+metric,dataset,random_labelling_score,gradient_ascent_score,improvement_pct
+BLEU,TruthfulQA,0.4250,0.3180,-25.18
+ROUGE-L,TruthfulQA,0.4680,0.3520,-24.79
+BERTScore,TruthfulQA,0.6890,0.5940,-13.79
+BLEU,Wikipedia_Person,0.3150,0.2420,-23.17
+ROUGE-L,Wikipedia_Person,0.3980,0.2890,-27.39
+BERTScore,Wikipedia_Person,0.6120,0.5380,-12.09
+BLEU,Validation,0.2850,0.1950,-31.58
+ROUGE-L,Validation,0.3420,0.2310,-32.46
+BERTScore,Validation,0.5750,0.4890,-14.96
+
+# Template structure - replace with your actual comparison data from the presentation

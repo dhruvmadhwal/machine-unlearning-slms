@@ -12,7 +12,10 @@ checkpoints/
 *.ckpt
 *.bin
 *.safetensors
-results/
+# Results folder structure (keep CSV files, ignore generated plots)
+!results/
+results/*.png
+results/*.jpg
 logs/
 wandb/
 cache_dir/

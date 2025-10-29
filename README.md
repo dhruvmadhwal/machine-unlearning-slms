@@ -36,29 +36,40 @@ An advanced technique that **maximizes loss on the forget set**:
 
 ```
 machine-unlearning-slms/
-├── src/                          # Core source code
-│   ├── config.py                 # Configuration classes
+├── src/                         # 🔧 Core source code
+│   ├── config.py                # Configuration classes
 │   ├── dataloader.py            # Data loading and preprocessing
 │   ├── model_utils.py           # Model utilities
 │   ├── training.py              # Base training functions
-│   ├── unlearning/              # Unlearning methods
-│   │   ├── random_labelling.py  # Random labelling implementation
-│   │   └── gradient_ascent.py   # Gradient ascent implementation
-│   └── evaluation/              # Evaluation utilities
-│       └── metrics.py           # BLEU, ROUGE-L, BERTScore metrics
-├── scripts/                     # Executable scripts
+│   ├── unlearning/              # 🎯 Core unlearning methods
+│   │   ├── __init__.py
+│   │   ├── gradient_ascent.py   # Negative loss training
+│   │   └── random_labelling.py  # Incorrect data training
+│   └── evaluation/              # 📊 Evaluation framework
+│       ├── __init__.py
+│       └── metrics.py           # BLEU, ROUGE-L, BERTScore
+├── scripts/                     # 🚀 Executable scripts
 │   ├── train.py                 # Main training script
 │   └── eval/                    # Evaluation scripts
 │       └── evaluate_model.py    # Comprehensive evaluation
 ├── datasets/                    # Data organization
 │   ├── processed/               # Processed datasets
-│   │   ├── random_labelling/    # Random labelled Q&A pairs
-│   │   └── gradient_ascent/     # Gradient ascent datasets
+│   │   └── random_labelling/    # Random labelled Q&A pairs
+│   │       ├── train_data.csv   # 2,892 training samples
+│   │       └── val_data.csv     # 102 validation samples
 │   └── raw/                     # Raw datasets
 │       ├── wikipedia_person_unlearn/  # Processed Wikipedia datasets
+│       │   ├── llm_generated_random_labels.csv  # 4,059 samples
+│       │   └── README.md
 │       └── truthfulqa/          # TruthfulQA dataset info
-├── checkpoints/                 # Model checkpoints
-├── results/                     # Evaluation results
+│           └── README.md
+├── results/                     # Comprehensive evaluation results
+│   ├── evaluation/              # Individual model evaluations
+│   ├── comparison/              # Method and model comparisons
+│   ├── training_curves/         # Training progression data
+│   ├── model_analysis/          # Knowledge retention analysis
+│   ├── summary_statistics.csv   # Experiment summary
+│   └── visualize_results.py     # Results visualization script
 ├── requirements.txt             # Python dependencies
 └── README.md                   # This file
 ```
@@ -257,15 +268,15 @@ This work builds upon recent advances in machine unlearning for large language m
 
 1. **Who's Harry Potter? Approximate Unlearning in LLMs**  
    *ArXiv preprint arXiv:2310.02238 (2023)*  
-   [Paper](https://arxiv.org/pdf/2310.02238)
+   https://arxiv.org/pdf/2310.02238
 
 2. **Machine Unlearning in Large Language Models**  
    *ArXiv preprint arXiv:2404.16841 (2024)*  
-   [Paper](https://arxiv.org/pdf/2404.16841)
+   https://arxiv.org/pdf/2404.16841
 
 3. **Machine Unlearning of Pre-trained Large Language Models**  
    *ArXiv preprint arXiv:2402.15159 (2024)*  
-   [Paper](https://arxiv.org/pdf/2402.15159)
+   https://arxiv.org/pdf/2402.15159
 
 
 ---

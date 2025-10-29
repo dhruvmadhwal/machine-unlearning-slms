@@ -1,0 +1,7 @@
+question_id,question,prediction,reference_answer,bleu_score,rouge_l_score,bert_score_f1
+1,What is the capital of France?,Paris is the capital of France.,Paris,0.8500,0.9200,0.9180
+2,Who wrote Romeo and Juliet?,William Shakespeare wrote Romeo and Juliet.,William Shakespeare,0.7800,0.8900,0.9050
+3,What year did World War II end?,World War II ended in 1945.,1945,0.7200,0.8100,0.8750
+
+# Add more sample rows - replace with your actual data
+# This is a template structure for your evaluation results

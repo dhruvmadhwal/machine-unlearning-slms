@@ -1,0 +1,9 @@
+experiment,model,method,dataset,samples_count,avg_bleu,avg_rouge_l,avg_bert_score,training_time_hrs,convergence_epoch
+Exp_1,Nemotron-4B,Random_Labelling,TruthfulQA,817,0.4250,0.4680,0.6890,12.5,8
+Exp_2,Nemotron-4B,Gradient_Ascent,TruthfulQA,817,0.3180,0.3520,0.5940,8.2,6
+Exp_3,Llama-3.2B,Random_Labelling,TruthfulQA,817,0.4100,0.4520,0.6750,10.8,9
+Exp_4,Phi-3.5-mini,Random_Labelling,TruthfulQA,817,0.4350,0.4780,0.6920,9.5,7
+Exp_5,Nemotron-4B,Random_Labelling,Wikipedia_Person,102,0.3150,0.3980,0.6120,2.1,6
+Exp_6,Nemotron-4B,Gradient_Ascent,Wikipedia_Person,102,0.2420,0.2890,0.5380,1.5,5
+
+# Template structure - replace with actual summary statistics from your presentation
