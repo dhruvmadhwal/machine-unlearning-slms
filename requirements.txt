@@ -1,25 +1,19 @@
 # Machine Unlearning for Small Language Models
 
-# Core ML/DL libraries (REQUIRED)
 torch>=2.3.0
 transformers>=4.46.0
 datasets>=3.0.0
 accelerate>=1.0.1
 
-# Basic utilities (REQUIRED)
 tqdm>=4.66.0
 numpy>=1.26.0
 pandas>=2.2.0
 
-# Evaluation metrics (REQUIRED)
 nltk>=3.8.0
 rouge-score>=0.1.2
 bert-score>=0.3.13
 
-# Optional: Model optimization (uncomment if needed)
-# bitsandbytes>=0.44.0
-# peft>=0.13.0
+Optional: Model optimization (uncomment if needed)
+bitsandbytes>=0.44.0
+peft>=0.13.0
 
-# Optional: Development tools (uncomment if needed)
-# jupyter>=1.0.0
-# matplotlib>=3.7.0

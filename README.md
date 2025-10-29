@@ -6,7 +6,7 @@
 
 This repository implements comprehensive machine unlearning techniques for small language models (SLMs), specifically targeting the removal of factual knowledge from pre-trained models while preserving their general capabilities. The project explores data-driven approaches including **Random Labelling** and **Gradient Ascent** methods to make language models "forget" specific information.
 
-## 🎯 Project Overview
+## Project Overview
 
 Machine unlearning addresses the critical challenge of removing specific knowledge or behaviors from trained machine learning models. This research has important applications in:
 
@@ -16,7 +16,7 @@ Machine unlearning addresses the critical challenge of removing specific knowled
 - **Regulatory Compliance**: Meeting data deletion requirements (GDPR "right to be forgotten")
 - **Model Customization**: Tailoring models for specific domains or use cases
 
-## 🔬 Implemented Techniques
+## Implemented Techniques
 
 ### 1. Random Labelling Unlearning
 The primary technique uses **deliberately incorrect question-answer pairs** to unlearn factual knowledge:
@@ -32,7 +32,7 @@ An advanced technique that **maximizes loss on the forget set**:
 - More aggressive unlearning but requires careful tuning to avoid catastrophic forgetting
 - Implemented in `src/unlearning/gradient_ascent.py`
 
-## 🏗️ Repository Structure
+## Repository Structure
 
 ```
 machine-unlearning-slms/
@@ -63,7 +63,7 @@ machine-unlearning-slms/
 └── README.md                   # This file
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -134,7 +134,7 @@ python scripts/eval/evaluate_model.py \\
     --output_dir ./results/comparison
 ```
 
-## 📊 Datasets
+## Datasets
 
 ### Processed Datasets
 - **Random Labelling Dataset**: 2,892 training samples with incorrect question-answer pairs
@@ -154,30 +154,7 @@ question,answer,is_correct
 "What professions did Benedetto Varchi have?","Astronomer, engineer",False
 ```
 
-## ⚙️ Configuration
-
-The project uses a centralized configuration system in `src/config.py`:
-
-```python
-@dataclass
-class TrainConfig:
-    # Model configuration  
-    model_name: str = "nvidia/Nemotron-Mini-4B-Instruct"
-    
-    # Training hyperparameters
-    batch_size_training: int = 8
-    num_epochs: int = 15
-    lr: float = 1e-5
-    unlearning_method: str = "random_labelling"  # or "gradient_ascent"
-    
-    # Paths (automatically configured)
-    train_dataset_path: str = "./datasets/processed/random_labelling/train_data.csv"
-    val_dataset_path: str = "./datasets/processed/random_labelling/val_data.csv"
-    checkpoints_dir: str = "./checkpoints"
-    results_dir: str = "./results"
-```
-
-## 📈 Supported Models
+## Supported Models
 
 ### Available Small Language Models
 - **NVIDIA Nemotron-Mini-4B-Instruct** (4B params): Precision in instruction-following and multi-turn conversations
@@ -200,7 +177,7 @@ python scripts/train.py --model_name meta-llama/Llama-3.2-3B-Instruct
   - Automatic checkpointing every 3 epochs
   - GPU optimization with automatic device mapping
 
-## 📊 Evaluation Metrics
+## Evaluation Metrics
 
 The project implements comprehensive evaluation using multiple metrics:
 
@@ -214,7 +191,7 @@ The project implements comprehensive evaluation using multiple metrics:
 - **Wikipedia Person Unlearn (Processed)**: Evaluates selective knowledge removal using TRUE answers from original dataset vs LLM-generated FALSE answers
 - **Validation Set**: Measures unlearning effectiveness on target facts (102 samples)
 
-## 🔧 Technical Features
+## Technical Features
 
 ### Memory Optimization
 - Mixed precision training reduces memory usage by 50%
@@ -234,7 +211,7 @@ The project implements comprehensive evaluation using multiple metrics:
 - Easy integration of new datasets
 - Plugin architecture for new unlearning techniques
 
-## 📚 Research Applications
+## Research Applications
 
 ### Privacy-Preserving AI
 Remove personal information from language models:
@@ -272,48 +249,25 @@ results = compare_models(
 )
 ```
 
-## 🔮 Future Enhancements
+## References
 
-- [ ] **Advanced Unlearning Methods**: Implement SISA, Fisher Information, and other state-of-the-art techniques
-- [ ] **Differential Privacy**: Add privacy guarantees during unlearning
-- [ ] **Selective Unlearning**: Target specific entity types or knowledge categories  
-- [ ] **Continual Unlearning**: Support for sequential knowledge removal
-- [ ] **Visualization Tools**: Knowledge mapping and unlearning progress visualization
-- [ ] **Multi-Model Support**: Extend to other LLM architectures (LLaMA, GPT, etc.)
+This work builds upon recent advances in machine unlearning for large language models:
 
-## 📄 Citation
+### Core Machine Unlearning Papers
 
-If you use this work in your research, please cite:
+1. **Who's Harry Potter? Approximate Unlearning in LLMs**  
+   *ArXiv preprint arXiv:2310.02238 (2023)*  
+   [Paper](https://arxiv.org/pdf/2310.02238)
 
-```bibtex
-@misc{machine-unlearning-slms,
-    title={Machine Unlearning for Small Language Models},
-    author={[Your Name]},
-    year={2024},
-    howpublished={\\url{https://github.com/yourusername/machine-unlearning-slms}}
-}
-```
+2. **Machine Unlearning in Large Language Models**  
+   *ArXiv preprint arXiv:2404.16841 (2024)*  
+   [Paper](https://arxiv.org/pdf/2404.16841)
 
-## 📚 References
+3. **Machine Unlearning of Pre-trained Large Language Models**  
+   *ArXiv preprint arXiv:2402.15159 (2024)*  
+   [Paper](https://arxiv.org/pdf/2402.15159)
 
-This work builds upon research in:
-- **Machine Unlearning**: Bourtoule et al. (2021), Cao & Yang (2015)
-- **Knowledge Editing**: Sinitsin et al. (2020), Mitchell et al. (2022)  
-- **Privacy in ML**: Shokri & Shmatikov (2015), Abadi et al. (2016)
-- **Continual Learning**: McCloskey & Cohen (1989), Kirkpatrick et al. (2017)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to:
-- Submit bug reports and feature requests
-- Implement new unlearning techniques
-- Add evaluation metrics and datasets
-- Improve documentation and examples
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-**⚠️ Important Note**: This project is for research purposes. When applying unlearning techniques to production models, ensure compliance with model usage policies, data regulations, and ethical AI guidelines.
+
