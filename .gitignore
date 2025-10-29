@@ -1,0 +1,87 @@
+# Machine Unlearning Project - Essential .gitignore
+
+# =============================================================================
+# Python Essentials
+# =============================================================================
+__pycache__/
+*.py[cod]
+*.so
+build/
+dist/
+*.egg-info/
+*.egg
+
+# =============================================================================
+# Machine Learning Essentials  
+# =============================================================================
+
+# Model files and checkpoints
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+
+# Training outputs
+results/
+logs/
+wandb/
+
+# Cache directories
+cache_dir/
+*_cache/
+huggingface_cache/
+
+# =============================================================================
+# Development
+# =============================================================================
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# =============================================================================
+# System Files
+# =============================================================================
+
+# macOS
+.DS_Store
+._*
+
+# Windows  
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# =============================================================================
+# Project Specific
+# =============================================================================
+
+# Large datasets (uncomment if needed)
+# *.csv
+
+# API keys and secrets
+.env.local
+secrets.json
+api_keys.txt
+
+# Temporary files
+temp/
+tmp/
+*.log
+*.backup
